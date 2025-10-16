@@ -1,0 +1,112 @@
+2025-09-19 11:20:34,791 - evalscope - INFO - Loading model /home/renzhh/SFT/LLaMA-Factory/new_data_qwen_0.5B_2 ...
+2025-09-19 11:20:37,361 - evalscope - WARNING - Got local model dir: /home/renzhh/SFT/LLaMA-Factory/new_data_qwen_0.5B_2
+2025-09-19 11:20:37,361 - evalscope - INFO - Updating generation config ...
+2025-09-19 11:20:37,533 - evalscope - INFO - Dump task config to ./outputs/20250919_112032/configs/task_config_a75efb.yaml
+2025-09-19 11:20:37,537 - evalscope - INFO - {
+    "model": "/home/renzhh/SFT/LLaMA-Factory/new_data_qwen_0.5B_2",
+    "model_id": "new_data_qwen_0.5B_2",
+    "model_args": {
+        "revision": "master",
+        "precision": "torch.float16",
+        "device_map": "auto"
+    },
+    "model_task": "text_generation",
+    "template_type": null,
+    "chat_template": null,
+    "datasets": [
+        "live_code_bench"
+    ],
+    "dataset_args": {
+        "live_code_bench": {
+            "name": "live_code_bench",
+            "dataset_id": "AI-ModelScope/code_generation_lite",
+            "model_adapter": "generation",
+            "output_types": [
+                "generation"
+            ],
+            "subset_list": [
+                "release_latest"
+            ],
+            "metric_list": [
+                "Pass@1"
+            ],
+            "few_shot_num": 0,
+            "few_shot_random": false,
+            "train_split": null,
+            "eval_split": "test",
+            "prompt_template": "### Question:\n{question_content}\n\n{format_prompt} ### Answer: (use the provided format with backticks)\n\n",
+            "system_prompt": "You are an expert Python programmer. You will be given a question (problem specification) and will generate a correct Python program that matches the specification and passes all tests. You will NOT return anything except for the program.",
+            "query_template": null,
+            "pretty_name": "Live-Code-Bench",
+            "description": "Live Code Bench is a benchmark for evaluating code generation models on real-world coding tasks. It includes a variety of programming problems with test cases to assess the model's ability to generate correct and efficient code solutions.",
+            "tags": [
+                "Coding"
+            ],
+            "filters": null,
+            "extra_params": {
+                "start_date": null,
+                "end_date": null,
+                "timeout": 6,
+                "debug": false
+            }
+        }
+    },
+    "dataset_dir": "/home/renzhh/.cache/modelscope/hub/datasets",
+    "dataset_hub": "modelscope",
+    "generation_config": {
+        "max_length": 2048,
+        "max_new_tokens": 512,
+        "do_sample": false,
+        "top_k": 50,
+        "top_p": 1.0,
+        "temperature": 1.0
+    },
+    "eval_type": "checkpoint",
+    "eval_backend": "Native",
+    "eval_config": null,
+    "stage": "all",
+    "limit": null,
+    "eval_batch_size": 1,
+    "mem_cache": false,
+    "use_cache": null,
+    "work_dir": "./outputs/20250919_112032",
+    "outputs": null,
+    "ignore_errors": false,
+    "debug": false,
+    "dry_run": false,
+    "seed": 42,
+    "api_url": null,
+    "api_key": "EMPTY",
+    "timeout": null,
+    "stream": false,
+    "judge_strategy": "auto",
+    "judge_worker_num": 1,
+    "judge_model_args": {},
+    "analysis_report": false
+}
+2025-09-19 11:20:37,537 - evalscope - INFO - Start evaluating on dataset AI-ModelScope/code_generation_lite
+2025-09-19 11:20:37,537 - evalscope - INFO - Loading dataset from hub: AI-ModelScope/code_generation_lite
+2025-09-19 11:20:37,755 - evalscope - INFO - Loading dataset: dataset_name: AI-ModelScope/code_generation_lite > subsets: ['release_latest']
+2025-09-19 11:23:10,398 - evalscope - INFO - Use settings: > few_shot_num: 0, > few_shot_split: None, > target_eval_split: test
+2025-09-19 12:08:34,539 - evalscope - INFO - Dump predictions to ./outputs/20250919_112032/predictions/new_data_qwen_0.5B_2/live_code_bench_release_latest.jsonl.
+2025-09-19 12:39:41,570 - evalscope - INFO - 
+AI-ModelScope/code_generation_lite report table:
++----------------------+-----------------+----------+----------------+-------+---------+---------+
+| Model                | Dataset         | Metric   | Subset         |   Num |   Score | Cat.0   |
++======================+=================+==========+================+=======+=========+=========+
+| new_data_qwen_0.5B_2 | live_code_bench | Pass@1   | release_latest |  1055 |  0.0133 | default |
++----------------------+-----------------+----------+----------------+-------+---------+---------+ 
+
+2025-09-19 12:39:41,571 - evalscope - INFO - Skipping report analysis (`analysis_report=False`).
+2025-09-19 12:39:41,572 - evalscope - INFO - Dump report to: ./outputs/20250919_112032/reports/new_data_qwen_0.5B_2/live_code_bench.json 
+
+2025-09-19 12:39:41,573 - evalscope - INFO - Evaluation finished on AI-ModelScope/code_generation_lite
+2025-09-19 12:39:42,385 - evalscope - INFO - Overall report table: 
++----------------------+-----------------+----------+----------------+-------+---------+---------+
+| Model                | Dataset         | Metric   | Subset         |   Num |   Score | Cat.0   |
++======================+=================+==========+================+=======+=========+=========+
+| new_data_qwen_0.5B_2 | live_code_bench | Pass@1   | release_latest |  1055 |  0.0133 | default |
++----------------------+-----------------+----------+----------------+-------+---------+---------+ 
+
+2025-09-19 12:39:42,856 - evalscope - INFO - Finished evaluation for new_data_qwen_0.5B_2 on ['live_code_bench']
+2025-09-19 12:39:42,856 - evalscope - INFO - Output directory: ./outputs/20250919_112032

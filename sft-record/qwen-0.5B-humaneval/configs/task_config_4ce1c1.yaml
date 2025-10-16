@@ -1,0 +1,73 @@
+analysis_report: false
+api_key: EMPTY
+api_url: null
+chat_template: null
+dataset_args:
+  humaneval:
+    dataset_id: modelscope/humaneval
+    description: HumanEval is a benchmark for evaluating the ability of code generation
+      models to write Python functions based on given specifications. It consists
+      of programming tasks with a defined input-output behavior.
+    eval_split: test
+    extra_params:
+      num_workers: 4
+      timeout: 4
+    few_shot_num: 0
+    few_shot_random: false
+    filters: null
+    metric_list:
+    - Pass@1
+    model_adapter: generation
+    name: humaneval
+    output_types:
+    - generation
+    pretty_name: HumanEval
+    prompt_template: 'Read the following function signature and docstring, and fully
+      implement the function described. Your response should only contain the code
+      for this function.
+
+      {query}'
+    query_template: null
+    subset_list:
+    - openai_humaneval
+    system_prompt: null
+    tags:
+    - Coding
+    train_split: null
+dataset_dir: /home/renzhh/.cache/modelscope/hub/datasets
+dataset_hub: modelscope
+datasets:
+- humaneval
+debug: false
+dry_run: false
+eval_backend: Native
+eval_batch_size: 1
+eval_config: null
+eval_type: checkpoint
+generation_config:
+  do_sample: false
+  max_length: 2048
+  max_new_tokens: 512
+  temperature: 1.0
+  top_k: 50
+  top_p: 1.0
+ignore_errors: false
+judge_model_args: {}
+judge_strategy: auto
+judge_worker_num: 1
+limit: null
+mem_cache: false
+model: Qwen/Qwen2.5-Coder-0.5B-Instruct
+model_args:
+  precision: torch.float16
+  revision: master
+model_id: Qwen2.5-Coder-0.5B-Instruct
+model_task: text_generation
+outputs: null
+seed: 42
+stage: all
+stream: false
+template_type: null
+timeout: null
+use_cache: null
+work_dir: ./outputs/20250821_021122

@@ -1,0 +1,84 @@
+analysis_report: false
+api_key: EMPTY
+api_url: null
+chat_template: null
+dataset_args:
+  live_code_bench:
+    dataset_id: AI-ModelScope/code_generation_lite
+    description: Live Code Bench is a benchmark for evaluating code generation models
+      on real-world coding tasks. It includes a variety of programming problems with
+      test cases to assess the model's ability to generate correct and efficient code
+      solutions.
+    eval_split: test
+    extra_params:
+      debug: false
+      end_date: null
+      start_date: null
+      timeout: 6
+    few_shot_num: 0
+    few_shot_random: false
+    filters: null
+    metric_list:
+    - Pass@1
+    model_adapter: generation
+    name: live_code_bench
+    output_types:
+    - generation
+    pretty_name: Live-Code-Bench
+    prompt_template: '### Question:
+
+      {question_content}
+
+
+      {format_prompt} ### Answer: (use the provided format with backticks)
+
+
+      '
+    query_template: null
+    subset_list:
+    - release_latest
+    system_prompt: You are an expert Python programmer. You will be given a question
+      (problem specification) and will generate a correct Python program that matches
+      the specification and passes all tests. You will NOT return anything except
+      for the program.
+    tags:
+    - Coding
+    train_split: null
+dataset_dir: /home/renzhh/.cache/modelscope/hub/datasets
+dataset_hub: modelscope
+datasets:
+- live_code_bench
+debug: false
+dry_run: false
+eval_backend: Native
+eval_batch_size: 1
+eval_config: null
+eval_type: checkpoint
+generation_config:
+  do_sample: false
+  max_length: 2048
+  max_new_tokens: 512
+  temperature: 1.0
+  top_k: 50
+  top_p: 1.0
+ignore_errors: false
+judge_model_args: {}
+judge_strategy: auto
+judge_worker_num: 1
+limit: null
+mem_cache: false
+model: /home/renzhh/SFT/newdata_qwen_7B
+model_args:
+  device_map: auto
+  precision: torch.float16
+  revision: master
+model_id: newdata_qwen_7B
+model_task: text_generation
+outputs: null
+seed: 42
+stage: all
+stream: false
+template_type: null
+timeout: null
+use_cache: null
+work_dir: ./outputs/20250916_172554
